@@ -35,6 +35,9 @@
 #           * gparted
 #           * "Master PDF Editor"
 #
+#    v0.2 2017-05-09, Vitor R. Di Toro:
+#	- Corrigido a instalação do Master PDF Editor, versão x64.
+#
 #-------------------------------------------------------------------------------
 #
 # License:
@@ -137,7 +140,7 @@ cd ~/Downloads
 arquitetura_sistema=`getconf LONG_BIT`
 if test "$arquitetura_sistema" = "64"
 then 
-	wget $MPE_64
+    wget $MPE_64 -O master-pdf-editor.deb
 else
     wget $MPE_32 -O master-pdf-editor.deb
 fi
