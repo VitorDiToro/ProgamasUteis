@@ -38,6 +38,16 @@
 #    v0.2 2017-05-09, Vitor R. Di Toro:
 #	- Corrigido a instalação do Master PDF Editor, versão x64.
 #
+#    v0.3 2017-05-10, Vitor R. Di Toro:
+#	- Adicionário "update" e "upgrade"
+#	- Alterado o nome da variável "arquitetura_sistema" para \
+#         "ARQUITETURA_SISTEMA" e alterado o seu local. Agora ela \
+#	  é declarada em "Constantes do Sistema".
+#	- Instalações:
+#	    * WPS-Office
+#           * Pacotes de fontes para o WPS-Office
+#           * Pacote de tradução da interface do WPS-Office
+#
 #-------------------------------------------------------------------------------
 #
 # License:
@@ -54,11 +64,29 @@
 #   Constantes do Programa   #
 #============================#
 
+# Verifica a arquitetura do Sistema (32 ou 64 bits)
+ARQUITETURA_SISTEMA=`getconf LONG_BIT`
+
 # Master PDF Editor - MPE
 MPE_64="http://get.code-industry.net/public/master-pdf-editor-4.1.30_qt5.amd64.deb" 
 MPE_32="http://get.code-industry.net/public/master-pdf-editor-4.1.30_i386.deb"
 
+# WPS Office - WPS
+WPS_32="http://kdl.cc.ksosoft.com/wps-community/download/a21/wps-office_10.1.0.5672~a21_i386.deb"
+WPS_64="http://kdl.cc.ksosoft.com/wps-community/download/a21/wps-office_10.1.0.5672~a21_amd64.deb"
+WPS_FONTES="http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb"
+WPS_PTBR="http://repo.uniaolivre.com/packages/trusty/main/wps-office-mui-pt-br_1.1.0-0kaiana1_all.deb"
+WPS_DICIONARIO=""
 
+#============================#
+#      Rotinas Básicas       #
+#============================#
+
+# Atualiza o cache dos repositórios
+sudo apt-get update
+
+# Atualiza os programas e pacotes já instalados
+sudo apt-get upgrade
 
 #============================#
 #     Programas Listados     #
@@ -137,13 +165,54 @@ sudo apt-get install gparted
 # Install "Master PDF Editor"
 #    Master PDF Editor is complete solution for view, print and edit PDF files.
 cd ~/Downloads
-arquitetura_sistema=`getconf LONG_BIT`
-if test "$arquitetura_sistema" = "64"
+if test "$ARQUITETURA_SISTEMA" = "64"
 then 
     wget $MPE_64 -O master-pdf-editor.deb
 else
     wget $MPE_32 -O master-pdf-editor.deb
 fi
-sudo gdebi master-pdf-editor.deb 
-sudo rm -rf ~/Downloads/master-pdf-editor.deb
 
+sudo gdebi master-pdf-editor.deb && \
+sudo rm -f master-pdf-editor.deb
+
+
+# Install WPS Office
+#    The Most Compatible Free Office Suite
+cd ~/Downloads
+if test "$ARQUITETURA_SISTEMA" = "64"
+then
+    wget $WPS_64 -O wps-office.deb
+else
+    wget $WPS_32 -O wps-office.deb
+fi
+
+sudo gdebi wps-office.deb && \
+sudo rm -f wps-office.deb
+
+
+# Instalação das Fontes para o WPS-Office 
+cd /tmp
+git clone https://github.com/iamdh4/ttf-wps-fonts.git
+cd ttf-wps-fonts
+sudo bash install.sh
+rm -rf /tmp/ttf-wps-fonts
+
+cd ~/Downloads
+wget $WPS_FONTES -O wps-fontes.deb
+sudo gdebi wps-fontes.deb &&
+sudo rm -f wps-fontes.deb
+
+
+# Instalação do pacote de tradução da interface do WPS-Office para PT-BR
+cd ~/Downloads
+wget $WPS_PTBR -O wps-traducao.deb
+sudo gdebi wps-traducao.deb && \
+sudo rm -f wps-traducao.deb
+
+# TODO
+#  - Ainda falta instalar o dicionário de PT-BR para o WPS-Office, no entanto,
+#    ainda tenho que descobrir qual fonte utilizar. 
+#    Cadidatos:
+#       - https://github.com/wps-community/wps_i18n/tree/master/pt_BR
+#       - https://drive.google.com/file/d/0B7HGeEB4kyvMaU5SbkdRRjBYWHc
+ 
