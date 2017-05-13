@@ -53,7 +53,7 @@
 #	- Adicionado o programa:
 #	    * shellcheck
 #	- Redividido os programas instaláveis em duas catgorias: 
-#	    <Programas do Repositório> e <Programas Externo>
+#	    <Programas do Repositório> e <Programas Externos>
 #	
 #-------------------------------------------------------------------------------
 #
