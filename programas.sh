@@ -48,6 +48,13 @@
 #           * Pacotes de fontes para o WPS-Office
 #           * Pacote de tradução da interface do WPS-Office
 #
+#    v0.4 2017-05-12, Vitor R. Di Toro:
+#	- Adicionado nova tarefa de adicionar um programa de BKP incremental no TODO
+#	- Adicionado o programa:
+#	    * shellcheck
+#	- Redividido os programas instaláveis em duas catgorias: 
+#	    <Programas do Repositório> e <Programas Externo>
+#	
 #-------------------------------------------------------------------------------
 #
 # License:
@@ -78,6 +85,8 @@ WPS_FONTES="http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fo
 WPS_PTBR="http://repo.uniaolivre.com/packages/trusty/main/wps-office-mui-pt-br_1.1.0-0kaiana1_all.deb"
 WPS_DICIONARIO=""
 
+
+
 #============================#
 #      Rotinas Básicas       #
 #============================#
@@ -88,8 +97,10 @@ sudo apt-get update
 # Atualiza os programas e pacotes já instalados
 sudo apt-get upgrade
 
+
+
 #============================#
-#     Programas Listados     #
+#  Programas do Repositório  #
 #============================#
 
 # Install "terminator"
@@ -162,6 +173,16 @@ sudo apt-get install ppa-purge
 sudo apt-get install gparted
 
 
+# Install "shellcheck"
+#    shellcheck - Shell script analysis tool
+sudo apt-get install shellcheck
+
+
+
+#============================#
+#     Programas Externos     #
+#============================#
+
 # Install "Master PDF Editor"
 #    Master PDF Editor is complete solution for view, print and edit PDF files.
 cd ~/Downloads
@@ -189,7 +210,6 @@ fi
 sudo gdebi wps-office.deb && \
 sudo rm -f wps-office.deb
 
-
 # Instalação das Fontes para o WPS-Office 
 cd /tmp
 git clone https://github.com/iamdh4/ttf-wps-fonts.git
@@ -202,12 +222,12 @@ wget $WPS_FONTES -O wps-fontes.deb
 sudo gdebi wps-fontes.deb &&
 sudo rm -f wps-fontes.deb
 
-
 # Instalação do pacote de tradução da interface do WPS-Office para PT-BR
 cd ~/Downloads
 wget $WPS_PTBR -O wps-traducao.deb
 sudo gdebi wps-traducao.deb && \
 sudo rm -f wps-traducao.deb
+
 
 # TODO
 #  - Ainda falta instalar o dicionário de PT-BR para o WPS-Office, no entanto,
@@ -215,4 +235,7 @@ sudo rm -f wps-traducao.deb
 #    Cadidatos:
 #       - https://github.com/wps-community/wps_i18n/tree/master/pt_BR
 #       - https://drive.google.com/file/d/0B7HGeEB4kyvMaU5SbkdRRjBYWHc
- 
+#
+#  - Adicionar algum programa p/ BKP incremental. Existem 2 candidados:
+#	- Duplicity <https://goo.gl/uuiXQz>
+#	- RSync  <https://goo.gl/R21PTL> (Mais Popular)
