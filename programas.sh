@@ -1,7 +1,9 @@
 # !/bin/bash
 #
-# Autor		: Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
-# Criado em	: 2017-05-08 
+# Autor:       Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
+# Criado em:   2017-05-08 
+#
+# Versão Atual: v0.5
 #
 #-------------------------------------------------------------------------------
 #
@@ -17,16 +19,16 @@
 # Histórico:
 #
 #    v0.1 2017-05-08, Vitor R. Di Toro:
-#	- Criado a arquivo.
-#	- Adicionado os programas:
-#	    * terminator
-#	    * tree
-#	    * vim
-#	    * ack-grep
+#       - Criado a arquivo.
+#       - Adicionado os programas:
+#	        * terminator
+#           * tree
+#           * vim
+#           * ack-grep
 #           * baobab
-#	    * meld
-#	    * build-essential
-#	    * htop
+#           * meld
+#           * build-essential
+#           * htop
 #           * gdebi
 #           * qBittorrent
 #           * git
@@ -36,24 +38,31 @@
 #           * "Master PDF Editor"
 #
 #    v0.2 2017-05-09, Vitor R. Di Toro:
-#	- Corrigido a instalação do Master PDF Editor, versão x64.
+#       - Corrigido a instalação do Master PDF Editor, versão x64.
 #
 #    v0.3 2017-05-10, Vitor R. Di Toro:
-#	- Adicionário "update" e "upgrade"
-#	- Alterado o nome da variável "arquitetura_sistema" para \
+#       - Adicionário "update" e "upgrade"
+#       - Alterado o nome da variável "arquitetura_sistema" para \
 #         "ARQUITETURA_SISTEMA" e alterado o seu local. Agora ela \
-#	  é declarada em "Constantes do Sistema".
-#	- Instalações:
-#	    * WPS-Office
+#         é declarada em "Constantes do Sistema".
+#       - Instalações:
+#           * WPS-Office
 #           * Pacotes de fontes para o WPS-Office
 #           * Pacote de tradução da interface do WPS-Office
 #
 #    v0.4 2017-05-12, Vitor R. Di Toro:
-#	- Adicionado nova tarefa de adicionar um programa de BKP incremental no TODO
-#	- Adicionado o programa:
-#	    * shellcheck
-#	- Redividido os programas instaláveis em duas catgorias: 
-#	    <Programas do Repositório> e <Programas Externos>
+#       - Adicionado nova tarefa de adicionar um programa de BKP incremental \
+#         no TODO.
+#       - Adicionado o programa:
+#           * shellcheck
+#       - Redividido os programas instaláveis em duas catgorias: 
+#	      <Programas do Repositório> e <Programas Externos>
+#    
+#    v0.5 2017-05-30, Vitor R. Di Toro:
+#       - Corrigida a tabulação deste arquivo.
+#       - Adicionado a criação de ~/.vimrc, para a configuração da tabulação \
+#         do vim.
+#       - Atualização do TODO.
 #	
 #-------------------------------------------------------------------------------
 #
@@ -99,9 +108,9 @@ sudo apt-get upgrade
 
 
 
-#============================#
-#  Programas do Repositório  #
-#============================#
+#=====================================#
+#  Programas de Repositórios Nativos  #
+#=====================================#
 
 # Install "terminator"
 #    Terminator - Multple GNOME terminals in one window
@@ -116,6 +125,22 @@ sudo apt-get install tree
 # Intall "vim"
 #    vim - Vi IMproved, a programmers text editor
 sudo apt-get install vim
+
+
+# Criação e configuração do arquivo ~/.vimrc
+touch ~/.vimrc
+echo "
+set tabstop=4       \" The width of a TAB is set to 4.
+                    \" Still it is a \t. It is just that
+                    \" Vim will interpret it to be having
+                    \" a width of 4.
+
+set shiftwidth=4    \" Indents will have a width of 4
+
+set softtabstop=4   \" Sets the number of columns for a TAB
+
+set expandtab       \" Expand TABs to spaces
+" >> ~/.vimrc
 
 
 # Install "ack-grep"
@@ -229,13 +254,13 @@ sudo gdebi wps-traducao.deb && \
 sudo rm -f wps-traducao.deb
 
 
-# TODO
-#  - Ainda falta instalar o dicionário de PT-BR para o WPS-Office, no entanto,
-#    ainda tenho que descobrir qual fonte utilizar. 
-#    Cadidatos:
+# == TODO ==
+#   - Ainda falta instalar o dicionário de PT-BR para o WPS-Office, no entanto,
+#     ainda tenho que descobrir qual fonte utilizar. 
+#     Candidatos:
 #       - https://github.com/wps-community/wps_i18n/tree/master/pt_BR
 #       - https://drive.google.com/file/d/0B7HGeEB4kyvMaU5SbkdRRjBYWHc
 #
-#  - Adicionar algum programa p/ BKP incremental. Existem 2 candidados:
-#	- Duplicity <https://goo.gl/uuiXQz>
-#	- RSync  <https://goo.gl/R21PTL> (Mais Popular)
+#   - Adicionar algum programa p/ BKP incremental. Existem 2 candidados:
+#   - Duplicity <https://goo.gl/uuiXQz>
+#   - RSync  <https://goo.gl/R21PTL> (Mais Popular)
