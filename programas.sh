@@ -3,7 +3,7 @@
 # Autor:       Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
 # Criado em:   2017-05-08 
 #
-# Versão Atual: v0.5
+# Versão Atual: v0.6
 #
 #-------------------------------------------------------------------------------
 #
@@ -63,6 +63,9 @@
 #       - Adicionado a criação de ~/.vimrc, para a configuração da tabulação \
 #         do vim.
 #       - Atualização do TODO.
+#
+#    v0.6 2017-05-30, Vitor R. Di Toro:
+#       - Corrigido o TODO.
 #	
 #-------------------------------------------------------------------------------
 #
@@ -258,9 +261,10 @@ sudo rm -f wps-traducao.deb
 #   - Ainda falta instalar o dicionário de PT-BR para o WPS-Office, no entanto,
 #     ainda tenho que descobrir qual fonte utilizar. 
 #     Candidatos:
-#       - https://github.com/wps-community/wps_i18n/tree/master/pt_BR
-#       - https://drive.google.com/file/d/0B7HGeEB4kyvMaU5SbkdRRjBYWHc
+#       * https://github.com/wps-community/wps_i18n/tree/master/pt_BR
+#       * https://drive.google.com/file/d/0B7HGeEB4kyvMaU5SbkdRRjBYWHc
 #
-#   - Adicionar algum programa p/ BKP incremental. Existem 2 candidados:
-#   - Duplicity <https://goo.gl/uuiXQz>
-#   - RSync  <https://goo.gl/R21PTL> (Mais Popular)
+#   - Adicionar algum programa p/ BKP incremental.
+#     Existem 2 candidados:
+#       * Duplicity <https://goo.gl/uuiXQz>
+#       * RSync  <https://goo.gl/R21PTL> (Mais Popular)
