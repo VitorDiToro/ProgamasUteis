@@ -3,7 +3,7 @@
 # Autor:       Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
 # Criado em:   2017-05-08 
 #
-# Versão Atual: v0.6
+# Versão Atual: v0.5.1
 #
 #-------------------------------------------------------------------------------
 #
@@ -18,7 +18,7 @@
 #
 # Histórico:
 #
-#    v0.1 2017-05-08, Vitor R. Di Toro:
+#    v0.1.0 : 2017-05-08, Vitor R. Di Toro:
 #       - Criado a arquivo.
 #       - Adicionado os programas:
 #	        * terminator
@@ -37,10 +37,10 @@
 #           * gparted
 #           * "Master PDF Editor"
 #
-#    v0.2 2017-05-09, Vitor R. Di Toro:
+#    v0.2.0 : 2017-05-09, Vitor R. Di Toro:
 #       - Corrigido a instalação do Master PDF Editor, versão x64.
 #
-#    v0.3 2017-05-10, Vitor R. Di Toro:
+#    v0.3.0 : 2017-05-10, Vitor R. Di Toro:
 #       - Adicionário "update" e "upgrade"
 #       - Alterado o nome da variável "arquitetura_sistema" para \
 #         "ARQUITETURA_SISTEMA" e alterado o seu local. Agora ela \
@@ -50,7 +50,7 @@
 #           * Pacotes de fontes para o WPS-Office
 #           * Pacote de tradução da interface do WPS-Office
 #
-#    v0.4 2017-05-12, Vitor R. Di Toro:
+#    v0.4.0 : 2017-05-12, Vitor R. Di Toro:
 #       - Adicionado nova tarefa de adicionar um programa de BKP incremental \
 #         no TODO.
 #       - Adicionado o programa:
@@ -58,14 +58,16 @@
 #       - Redividido os programas instaláveis em duas catgorias: 
 #	      <Programas do Repositório> e <Programas Externos>
 #    
-#    v0.5 2017-05-30, Vitor R. Di Toro:
+#    v0.5.0 : 2017-05-30, Vitor R. Di Toro:
 #       - Corrigida a tabulação deste arquivo.
 #       - Adicionado a criação de ~/.vimrc, para a configuração da tabulação \
 #         do vim.
 #       - Atualização do TODO.
 #
-#    v0.6 2017-05-30, Vitor R. Di Toro:
+#    v0.5.1 : 2017-05-30, Vitor R. Di Toro:
 #       - Corrigido o TODO.
+#       - Corridigo o versionamento de forma retroativa.
+#       - Alterado o padrão para as "caixas de título".
 #	
 #-------------------------------------------------------------------------------
 #
@@ -79,9 +81,9 @@
 
 
 
-#============================#
-#   Constantes do Programa   #
-#============================#
+#=======================================#
+#   Constantes do Programa              #
+#=======================================#
 
 # Verifica a arquitetura do Sistema (32 ou 64 bits)
 ARQUITETURA_SISTEMA=`getconf LONG_BIT`
@@ -99,9 +101,9 @@ WPS_DICIONARIO=""
 
 
 
-#============================#
-#      Rotinas Básicas       #
-#============================#
+#======================================#
+#  Rotinas Básicas                     #
+#======================================#
 
 # Atualiza o cache dos repositórios
 sudo apt-get update
@@ -111,9 +113,9 @@ sudo apt-get upgrade
 
 
 
-#=====================================#
-#  Programas de Repositórios Nativos  #
-#=====================================#
+#======================================#
+#  Programas de Repositórios Nativos   #
+#======================================#
 
 # Install "terminator"
 #    Terminator - Multple GNOME terminals in one window
@@ -207,9 +209,9 @@ sudo apt-get install shellcheck
 
 
 
-#============================#
-#     Programas Externos     #
-#============================#
+#======================================#
+#  Programas Externos                  #
+#======================================#
 
 # Install "Master PDF Editor"
 #    Master PDF Editor is complete solution for view, print and edit PDF files.
@@ -268,3 +270,9 @@ sudo rm -f wps-traducao.deb
 #     Existem 2 candidados:
 #       * Duplicity <https://goo.gl/uuiXQz>
 #       * RSync  <https://goo.gl/R21PTL> (Mais Popular)
+#
+#
+#   - Realizar testes e adequações do Script em VMs com:
+#       * Debian - 8.8 Jessie
+#       * Mint Cinnamon Edition - 18.1 Serena
+#       * Ubuntu - 16.04 LST
