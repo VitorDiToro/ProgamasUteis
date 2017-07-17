@@ -1,9 +1,9 @@
 # !/bin/bash
+# 
+# Autor        : Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
+# Criado em    : 2017-05-08 
 #
-# Autor:       Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
-# Criado em:   2017-05-08 
-#
-# Versão Atual: v0.5.1
+# Versão Atual : v0.6.1
 #
 #-------------------------------------------------------------------------------
 #
@@ -68,7 +68,63 @@
 #       - Corrigido o TODO.
 #       - Corridigo o versionamento de forma retroativa.
 #       - Alterado o padrão para as "caixas de título".
-#	
+#
+#    V0.6.0 : 2017-06-24, Vitor R. Di Toro:
+#       - Atualizado os links de instalção do WPS Office (10.1.0.5707~a21)
+#       - Atualizado o TODO (lista de pendências):
+#	    * Adição da pendência do dicionário, corretor gramatical e 
+#	      corretor ortográfico (PT-Br) p/ LaTeX.
+#       - Adicionado:
+#           * texmaker
+#           * texmaker-data
+#           * texlive
+#           * texlive-extra-utils
+#           * texlive-font-utils
+#           * texlive-games
+#           * texlive-htmlxml 
+#           * texlive-humanities 
+#           * texlive-metapost 
+#           * texlive-music 
+#           * texlive-omega 
+#           * texlive-pictures 
+#           * texlive-pstricks 
+#           * texlive-publishers 
+#           * texlive-science 
+#           * texlive-xetex 
+#           * texlive-generic-recommended 
+#           * texlive-bibtex-extra 
+#           * texlive-fonts-extra 
+#           * texlive-formats-extra 
+#           * texlive-luatex 
+#           * texlive-math-extra 
+#           * texlive-generic-extra 
+#           * texlive-plain-extra 
+#           * texlive-latex-extra 
+#           * texlive-humanities-doc 
+#           * texlive-latex-recommended-doc 
+#           * texlive-metapost-doc 
+#           * texlive-pictures-doc 
+#           * texlive-pstricks-doc 
+#           * texlive-publishers-doc 
+#           * texlive-science-doc 
+#           * texlive-latex-base-doc 
+#           * texlive-latex-extra-doc 
+#           * texlive-fonts-extra-doc 
+#           * texlive-fonts-recommended-doc 
+#           * texlive-lang-portuguese 
+#           * texlive-lang-english
+#           * texlive-lang-greek
+#
+#    V0.6.1 : 2017-07-17, Vitor R. Di Toro:
+#       - Adicionado os pacotes "libgoo-canvas-perl" e "gnome-web-photo" para
+#         o funcionamento do editor de imagens natido do Shutter no Linux Mint. 
+#       - Realizado o Merge da versão existente no GitHub e a versão local, com
+#         a correção da numeração das versões, adequando-a após o merge.
+#         *Obs: Exqueci de "comitar" algumas mudanças que havia feito no repositório
+#               local do meu notebook, gerando uma inconsistência entre a versão do 
+#               repositório e a versão local, que deve de ser corrigida manualmente.
+#	- Atualizado o  TODO, para referenciar as novas versões do Debian e do Mint.
+#
 #-------------------------------------------------------------------------------
 #
 # License:
@@ -93,8 +149,8 @@ MPE_64="http://get.code-industry.net/public/master-pdf-editor-4.1.30_qt5.amd64.d
 MPE_32="http://get.code-industry.net/public/master-pdf-editor-4.1.30_i386.deb"
 
 # WPS Office - WPS
-WPS_32="http://kdl.cc.ksosoft.com/wps-community/download/a21/wps-office_10.1.0.5672~a21_i386.deb"
-WPS_64="http://kdl.cc.ksosoft.com/wps-community/download/a21/wps-office_10.1.0.5672~a21_amd64.deb"
+WPS_32="http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_i386.deb"
+WPS_64="http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_amd64.deb"
 WPS_FONTES="http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb"
 WPS_PTBR="http://repo.uniaolivre.com/packages/trusty/main/wps-office-mui-pt-br_1.1.0-0kaiana1_all.deb"
 WPS_DICIONARIO=""
@@ -188,9 +244,14 @@ sudo apt-get install qbittorrent
 sudo apt-get install git
 
 
-# Install "shutter"
-#    Shutter - Feature-rich Screenshot Tool
+# Install "shutter" && Pacotes necessário apenas no Mint
+#    Shutter - Feature-rich Screenshot Tool 
 sudo apt-get install shutter
+
+# OBS: No Linux Mint, a edição de imagens nativa do Shutter não funciona por
+#      falta dos pacotes "libgoo-canvas-perl" e "gnome-web-photo", deviso a
+#      isso, faz-se necessári a instação do dos mesmos.
+sudo apt install libgoo-canvas-perl gnome-web-photo 
 
 
 # Install "ppa-purge"
@@ -206,6 +267,16 @@ sudo apt-get install gparted
 # Install "shellcheck"
 #    shellcheck - Shell script analysis tool
 sudo apt-get install shellcheck
+
+
+# TexLive (Com tudo mais que possa ser útil)
+#    TeX Live: A decent selection of the TeX Live packages
+sudo apt-get install texlive texlive-extra-utils texlive-font-utils texlive-games texlive-htmlxml texlive-humanities texlive-metapost texlive-music texlive-omega texlive-pictures texlive-pstricks texlive-publishers texlive-science texlive-xetex texlive-generic-recommended texlive-bibtex-extra texlive-fonts-extra texlive-formats-extra texlive-luatex texlive-math-extra texlive-generic-extra texlive-plain-extra texlive-latex-extra texlive-humanities-doc texlive-latex-recommended-doc texlive-metapost-doc texlive-pictures-doc texlive-pstricks-doc texlive-publishers-doc texlive-science-doc texlive-latex-base-doc texlive-latex-extra-doc texlive-fonts-extra-doc texlive-fonts-recommended-doc texlive-lang-portuguese texlive-lang-english texlive-lang-greek
+
+
+# TexMaker
+#    The Universal LaTeX editor
+sudo apt-get install texmaker texmaker-data
 
 
 
@@ -240,6 +311,7 @@ fi
 sudo gdebi wps-office.deb && \
 sudo rm -f wps-office.deb
 
+
 # Instalação das Fontes para o WPS-Office 
 cd /tmp
 git clone https://github.com/iamdh4/ttf-wps-fonts.git
@@ -251,6 +323,7 @@ cd ~/Downloads
 wget $WPS_FONTES -O wps-fontes.deb
 sudo gdebi wps-fontes.deb &&
 sudo rm -f wps-fontes.deb
+
 
 # Instalação do pacote de tradução da interface do WPS-Office para PT-BR
 cd ~/Downloads
@@ -271,8 +344,10 @@ sudo rm -f wps-traducao.deb
 #       * Duplicity <https://goo.gl/uuiXQz>
 #       * RSync  <https://goo.gl/R21PTL> (Mais Popular)
 #
+#  - Adicionar os dicionários de LaTeX (pt-br):
+#	- https://sites.google.com/site/latexgrucad/dicionario
 #
 #   - Realizar testes e adequações do Script em VMs com:
-#       * Debian - 8.8 Jessie
-#       * Mint Cinnamon Edition - 18.1 Serena
+#       * Debian - 9
+#       * Mint Cinnamon Edition - 18.2
 #       * Ubuntu - 16.04 LST
