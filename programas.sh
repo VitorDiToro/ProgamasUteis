@@ -3,7 +3,7 @@
 # Autor        : Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
 # Criado em    : 2017-05-08 
 #
-# Versão Atual : v0.6.1
+# Versão Atual : v0.6.2
 #
 #-------------------------------------------------------------------------------
 #
@@ -21,7 +21,7 @@
 #    v0.1.0 : 2017-05-08, Vitor R. Di Toro:
 #       - Criado a arquivo.
 #       - Adicionado os programas:
-#	        * terminator
+#           * terminator
 #           * tree
 #           * vim
 #           * ack-grep
@@ -42,8 +42,8 @@
 #
 #    v0.3.0 : 2017-05-10, Vitor R. Di Toro:
 #       - Adicionário "update" e "upgrade"
-#       - Alterado o nome da variável "arquitetura_sistema" para \
-#         "ARQUITETURA_SISTEMA" e alterado o seu local. Agora ela \
+#       - Alterado o nome da variável "arquitetura_sistema" para
+#         "ARQUITETURA_SISTEMA" e alterado o seu local. Agora ela
 #         é declarada em "Constantes do Sistema".
 #       - Instalações:
 #           * WPS-Office
@@ -51,16 +51,16 @@
 #           * Pacote de tradução da interface do WPS-Office
 #
 #    v0.4.0 : 2017-05-12, Vitor R. Di Toro:
-#       - Adicionado nova tarefa de adicionar um programa de BKP incremental \
+#       - Adicionado nova tarefa de adicionar um programa de BKP incremental
 #         no TODO.
 #       - Adicionado o programa:
 #           * shellcheck
 #       - Redividido os programas instaláveis em duas catgorias: 
-#	      <Programas do Repositório> e <Programas Externos>
+#	    <Programas do Repositório> e <Programas Externos>
 #    
 #    v0.5.0 : 2017-05-30, Vitor R. Di Toro:
 #       - Corrigida a tabulação deste arquivo.
-#       - Adicionado a criação de ~/.vimrc, para a configuração da tabulação \
+#       - Adicionado a criação de ~/.vimrc, para a configuração da tabulação
 #         do vim.
 #       - Atualização do TODO.
 #
@@ -118,12 +118,19 @@
 #    V0.6.1 : 2017-07-17, Vitor R. Di Toro:
 #       - Adicionado os pacotes "libgoo-canvas-perl" e "gnome-web-photo" para
 #         o funcionamento do editor de imagens natido do Shutter no Linux Mint. 
+#	- Atualizado o  TODO, para referenciar as novas versões do Debian e do 
+#         Linux Mint.
 #       - Realizado o Merge da versão existente no GitHub e a versão local, com
 #         a correção da numeração das versões, adequando-a após o merge.
-#         *Obs: Exqueci de "comitar" algumas mudanças que havia feito no repositório
-#               local do meu notebook, gerando uma inconsistência entre a versão do 
-#               repositório e a versão local, que deve de ser corrigida manualmente.
-#	- Atualizado o  TODO, para referenciar as novas versões do Debian e do Mint.
+#       * Obs: Exqueci de "comitar" algumas mudanças que havia feito no
+#              repositório local do meu notebook, gerando uma inconsistência
+#              entre a versão do repositório e a versão local, que deve de ser
+#              corrigida manualmente.
+#
+#
+#    V0.6.2 : 2017-08-01, Vitor R. Di Toro:
+#       - Adicionado:
+#           * Atom - A hackable text editor for the 21st Century
 #
 #-------------------------------------------------------------------------------
 #
@@ -330,6 +337,15 @@ cd ~/Downloads
 wget $WPS_PTBR -O wps-traducao.deb
 sudo gdebi wps-traducao.deb && \
 sudo rm -f wps-traducao.deb
+
+
+# Atom
+#    A hackable text editor for the 21st Century
+cd ~/Downloads
+wget https://atom.io/download/deb -O atom.deb
+sudo gdebi atom.deb && \
+sudo rm -f atom.deb
+
 
 
 # == TODO ==
