@@ -3,7 +3,7 @@
 # Autor        : Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
 # Criado em    : 2017-05-08 
 #
-# Versão Atual : v0.6.3
+# Versão Atual : v0.6.4
 #
 #-------------------------------------------------------------------------------
 #
