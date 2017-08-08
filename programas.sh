@@ -3,7 +3,7 @@
 # Autor        : Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
 # Criado em    : 2017-05-08 
 #
-# Versão Atual : v0.6.2
+# Versão Atual : v0.6.3
 #
 #-------------------------------------------------------------------------------
 #
@@ -132,6 +132,11 @@
 #       - Adicionado:
 #           * Atom - A hackable text editor for the 21st Century
 #
+#    V0.6.2 : 2017-08-08, Vitor R. Di Toro:
+#       - Adicionado:
+#           * Script de configuração do Terminator
+#
+#
 #-------------------------------------------------------------------------------
 #
 # License:
@@ -184,6 +189,57 @@ sudo apt-get upgrade
 #    Terminator - Multple GNOME terminals in one window
 sudo apt-get install terminator
 
+# Personalização do Terminator
+echo "\
+[global_config]\
+  enabled_plugins = ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler\
+  always_on_top = True\
+  tab_position = bottom\
+  sticky = True\
+[keybindings]\
+  hide_window = F12\
+[profiles]\
+  [[default]]\
+    background_darkness = 0.9\
+    background_image = None\
+    background_type = transparent\
+    split_to_group = True\
+    foreground_color = \"#ffffff\"\
+[layouts]\
+  [[default]]\
+    [[[child0]]]\
+      position = 0:24\
+      type = Window\
+      order = 0\
+      parent = \"\"\
+      size = 1679, 298\
+    [[[child1]]]\
+      position = 839\
+      type = HPaned\
+      order = 0\
+      parent = child0\
+    [[[terminal3]]]\
+      profile = default\
+      type = Terminal\
+      order = 1\
+      parent = child1\
+    [[[terminal2]]]\
+      profile = default\
+      type = Terminal\
+      order = 0\
+      parent = child1\
+  [[original]]\
+    [[[child1]]]\
+      type = Terminal\
+      parent = window0\
+      profile = default\
+    [[[window0]]]\
+      type = Window\
+      order = 0\
+      parent = \"\"\
+[plugins]\
+" > ~/.config/terminator/config
+
 
 # Install "tree"
 #    tree - list contents of directories in a tree-like format.
@@ -193,7 +249,6 @@ sudo apt-get install tree
 # Intall "vim"
 #    vim - Vi IMproved, a programmers text editor
 sudo apt-get install vim
-
 
 # Criação e configuração do arquivo ~/.vimrc
 touch ~/.vimrc
