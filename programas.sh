@@ -132,10 +132,14 @@
 #       - Adicionado:
 #           * Atom - A hackable text editor for the 21st Century
 #
-#    V0.6.2 : 2017-08-08, Vitor R. Di Toro:
+#    V0.6.3 : 2017-08-08, Vitor R. Di Toro:
 #       - Adicionado:
 #           * Script de configuração do Terminator
 #
+#    V0.6.4 : 2017-08-08, Vitor R. Di Toro:
+#       - Correções:
+#           * Script de configuração do Terminator
+#           * Script de configuração do VIM
 #
 #-------------------------------------------------------------------------------
 #
@@ -190,55 +194,55 @@ sudo apt-get upgrade
 sudo apt-get install terminator
 
 # Personalização do Terminator
-echo "\
-[global_config]\
-  enabled_plugins = ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler\
-  always_on_top = True\
-  tab_position = bottom\
-  sticky = True\
-[keybindings]\
-  hide_window = F12\
-[profiles]\
-  [[default]]\
-    background_darkness = 0.9\
-    background_image = None\
-    background_type = transparent\
-    split_to_group = True\
-    foreground_color = \"#ffffff\"\
-[layouts]\
-  [[default]]\
-    [[[child0]]]\
-      position = 0:24\
-      type = Window\
-      order = 0\
-      parent = \"\"\
-      size = 1679, 298\
-    [[[child1]]]\
-      position = 839\
-      type = HPaned\
-      order = 0\
-      parent = child0\
-    [[[terminal3]]]\
-      profile = default\
-      type = Terminal\
-      order = 1\
-      parent = child1\
-    [[[terminal2]]]\
-      profile = default\
-      type = Terminal\
-      order = 0\
-      parent = child1\
-  [[original]]\
-    [[[child1]]]\
-      type = Terminal\
-      parent = window0\
-      profile = default\
-    [[[window0]]]\
-      type = Window\
-      order = 0\
-      parent = \"\"\
-[plugins]\
-" > ~/.config/terminator/config
+echo $'[global_config]
+  enabled_plugins = ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  always_on_top = True
+  tab_position = bottom
+  sticky = True
+[keybindings]
+  hide_window = F12
+[profiles]
+  [[default]]
+    background_darkness = 0.86
+    background_image = None
+    background_type = transparent
+    split_to_group = True
+    foreground_color = \"#ffffff\"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child0]]]
+      position = 0:24
+      type = Window
+      order = 0
+      parent = \"\"
+      size = 1679, 598
+    [[[child1]]]
+      position = 839
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child1
+  [[original]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      order = 0
+      parent = \"\"
+[plugins]
+' > ~/.config/terminator/config
 
 
 # Install "tree"
@@ -263,7 +267,9 @@ set shiftwidth=4    \" Indents will have a width of 4
 set softtabstop=4   \" Sets the number of columns for a TAB
 
 set expandtab       \" Expand TABs to spaces
-" >> ~/.vimrc
+
+set statusline+=%F\ %l\:%c
+" > ~/.vimrc
 
 
 # Install "ack-grep"
@@ -311,7 +317,7 @@ sudo apt-get install git
 sudo apt-get install shutter
 
 # OBS: No Linux Mint, a edição de imagens nativa do Shutter não funciona por
-#      falta dos pacotes "libgoo-canvas-perl" e "gnome-web-photo", deviso a
+#      falta dos pacotes "libgoo-canvas-perl" e "gnome-web-photo", devido a
 #      isso, faz-se necessári a instação do dos mesmos.
 sudo apt install libgoo-canvas-perl gnome-web-photo 
 
