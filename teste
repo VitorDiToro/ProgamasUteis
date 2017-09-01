@@ -1,0 +1,17 @@
+MPE_64="http://get.code-industry.net/public/master-pdf-editor-4.1.30_qt5.amd64.deb"
+MPE_32="http://get.code-industry.net/public/master-pdf-editor-4.1.30_i386.deb"
+
+cd ~/Downloads
+
+arquitetura_sistema=`getconf LONG_BIT`
+
+if test "$arquitetura_sistema" = "64"
+then
+    wget $MPE_64 -O master-pdf-editor.deb
+else
+    wget $MPE_32 -O master-pdf-editor.deb
+fi
+
+sudo gdebi master-pdf-editor.deb 
+
+sudo rm -rf ~/Downloads/master-pdf-editor.deb
