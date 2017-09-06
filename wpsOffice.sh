@@ -36,7 +36,8 @@ WPS_32="http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.57
 WPS_64="http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_amd64.deb"
 WPS_FONTES="http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb"
 WPS_PTBR="http://repo.uniaolivre.com/packages/trusty/main/wps-office-mui-pt-br_1.1.0-0kaiana1_all.deb"
-WPS_DICIONARIO="https://github.com/VitorDiToro/ProgamasUteis/blob/master/wps-office-language-all_0.1_all.deb"
+WPS_DICIONARIO="https://github.com/VitorDiToro/ProgamasUteis/raw/master/wps-office-language-all_0.1_all.deb"
+
 #===============================================================================
 
 
@@ -83,6 +84,6 @@ sudo rm -f wps-traducao.deb
 # OBS: Por ser uma versão BETA, o dicionário PT-Br ainda contem alguns erros
 #      de grafia e falta de algumas palavras. 
 cd /tmp
-wget $WPS_DICIONArio -O wps-dicionario.deb
+wget $WPS_DICIONARIO -O wps-dicionario.deb
 sudo dpkg -i wps-dicionario.deb && \
 sudo rm -f wps-dicionario.deb
