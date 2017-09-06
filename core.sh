@@ -3,9 +3,26 @@
 # Autor        : Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
 # Criado em    : 2017-08-08 
 #
-# Versão Atual : v0.1.0
+# Versão Atual : v0.1.1
 #
 #-------------------------------------------------------------------------------
+#
+# Finalidade:
+#    Auxiliar na instalação do Master PDF Editor.
+#
+#-------------------------------------------------------------------------------
+#
+# Histórico:
+#
+#    v0.1.0 : 2017-08-08, Vitor R. Di Toro:
+#       - Versão Inicial.
+#
+#    v0.1.1 : 2017-09-06, Vitor R. Di Toro:
+#       - Atualizado a o cabeçalho deste documento, para conter as sessões 
+#         Finalidade e Histórico.
+#
+#-------------------------------------------------------------------------------
+
 
 
 
