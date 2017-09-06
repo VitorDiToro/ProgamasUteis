@@ -1,7 +1,7 @@
 #!/bin/bash
 # 
 # Autor        : Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
-# Criado em    : 2017-08-08 
+# Criado em    : 2017-09-02 
 #
 # Versão Atual : v0.1.0
 #
