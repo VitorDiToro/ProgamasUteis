@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 # 
 # Autor        : Vitor Rodrigues Di Toro" <vitorrditoro@gmail.com>
 # Criado em    : 2017-05-08 
