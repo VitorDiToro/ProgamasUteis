@@ -80,6 +80,10 @@ sudo dpkg -i wps-traducao.deb && \
 sudo rm -f wps-traducao.deb
 
 
+# Instalação do pacote M$ Core Fonts
+sudo apt-get install ttf-mscorefonts-installer
+
+
 # Instalação do dicionário do WPS-Office com suporte a multiplos idiomas.
 # OBS: Por ser uma versão BETA, o dicionário PT-Br ainda contem alguns erros
 #      de grafia e falta de algumas palavras. 
