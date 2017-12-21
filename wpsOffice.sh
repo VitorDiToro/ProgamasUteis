@@ -19,13 +19,14 @@
 #
 #    v0.1.0 : 2017-09-06, Vitor R. Di Toro:
 #       - Versão Inicial
+
 #
 #-------------------------------------------------------------------------------
 
 
 
 #=======================================#
-#   Constantes do Programa              #
+#  Constantes do Programa               #
 #=======================================#
 
 # Verifica a arquitetura do Sistema (32 ou 64 bits)
@@ -43,7 +44,7 @@ WPS_DICIONARIO="https://github.com/VitorDiToro/ProgramasUteis/raw/master/wps-off
 
 
 #======================================#
-#  Instalação de Programas Externos    #
+#  Instalação do WPS e afins           #
 #======================================#
 
 # Install WPS Office
@@ -53,9 +54,8 @@ if test "$ARQUITETURA_SISTEMA" = "64"
 then
     wget $WPS_64 -O wps-office.deb
 else
-    wget $WPS_32 -O wps-office.deb
+    wget $WPS_32 -O wps-office.debfi
 fi
-
 sudo dpkg -i wps-office.deb && \
 sudo rm -f wps-office.deb
 
