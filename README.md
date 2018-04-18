@@ -44,6 +44,8 @@ sudo apt-get install shellcheck
 
 
 
+<br>
+
 ## Internet
 
 ### qBittorrent -- a Bittorrent client written in C++/Qt
@@ -59,6 +61,8 @@ sudo apt-get install qbittorrent
 
 
 
+
+<br>
 
 ## Office
 
@@ -107,6 +111,8 @@ sudo bash install.sh
 
 
 
+<br>
+
 ## System
 
 ### Gparted -- GNOME partition editor
@@ -117,7 +123,7 @@ sudo apt-get install gparted
 
 
 
-
+<br>
 
 ## Util
 
