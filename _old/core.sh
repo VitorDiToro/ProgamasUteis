@@ -32,7 +32,7 @@
 
 # Define o local de onde está sendo rodado o script
 #====================================================================
-LOCAL = $pwd
+LOCAL=$pwd
 
 
 # Atualiza o cache dos repositórios

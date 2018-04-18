@@ -36,8 +36,8 @@ ARQUITETURA_SISTEMA=`getconf LONG_BIT`
 WPS_32="http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_i386.deb"
 WPS_64="http://kdl1.cache.wps.com/ksodl/download/linux/a21//wps-office_10.1.0.5707~a21_amd64.deb"
 WPS_FONTES="http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb"
-WPS_PTBR="http://repo.uniaolivre.com/packages/trusty/main/wps-office-mui-pt-br_1.1.0-0kaiana1_all.deb"
-WPS_DICIONARIO="https://github.com/VitorDiToro/ProgramasUteis/raw/master/wps-office-language-all_0.1_all.deb"
+WPS_PTBR="https://www.dropbox.com/s/9dhmhz5tjuerv9m/wps-office-mui-pt-br_1.1.0-0kaiana1_all.deb"
+WPS_DICIONARIO="https://github.com/VitorDiToro/ProgramasUteis/files/raw/master/wps-office-language-all_0.1_all.deb"
 
 #===============================================================================
 
@@ -54,7 +54,7 @@ if test "$ARQUITETURA_SISTEMA" = "64"
 then
     wget $WPS_64 -O wps-office.deb
 else
-    wget $WPS_32 -O wps-office.debfi
+    wget $WPS_32 -O wps-office.deb
 fi
 sudo dpkg -i wps-office.deb && \
 sudo rm -f wps-office.deb
